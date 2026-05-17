@@ -1,0 +1,439 @@
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Birthday Hira 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Quicksand',sans-serif;
+    overflow:hidden;
+    min-height:100vh;
+    background:linear-gradient(180deg,#dff5ff,#ffe3f1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* dreamy animated background */
+
+.background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.35);
+    animation:float 15s linear infinite;
+    backdrop-filter:blur(8px);
+}
+
+.circle:nth-child(1){
+    width:120px;
+    height:120px;
+    left:10%;
+    animation-duration:18s;
+}
+
+.circle:nth-child(2){
+    width:70px;
+    height:70px;
+    left:30%;
+    animation-duration:14s;
+    animation-delay:2s;
+}
+
+.circle:nth-child(3){
+    width:150px;
+    height:150px;
+    left:70%;
+    animation-duration:22s;
+}
+
+.circle:nth-child(4){
+    width:90px;
+    height:90px;
+    left:85%;
+    animation-duration:16s;
+}
+
+.circle:nth-child(5){
+    width:60px;
+    height:60px;
+    left:50%;
+    animation-duration:12s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* stars */
+
+.stars span{
+    position:absolute;
+    color:white;
+    animation:twinkle 3s infinite;
+    font-size:18px;
+}
+
+.stars span:nth-child(1){top:12%;left:15%;}
+.stars span:nth-child(2){top:20%;left:80%;}
+.stars span:nth-child(3){top:70%;left:10%;}
+.stars span:nth-child(4){top:80%;left:78%;}
+.stars span:nth-child(5){top:55%;left:50%;}
+.stars span:nth-child(6){top:35%;left:65%;}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.3;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* card */
+
+.card{
+    width:92%;
+    max-width:500px;
+    padding:35px 25px;
+    border-radius:35px;
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(14px);
+    border:2px solid rgba(255,255,255,0.4);
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+    text-align:center;
+    animation:cardEntrance 1.2s ease;
+}
+
+@keyframes cardEntrance{
+    from{
+        opacity:0;
+        transform:translateY(50px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 22px;
+    background:#ffd8eb;
+    border-radius:50px;
+    color:#ff4f9f;
+    font-weight:700;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+    100%{transform:scale(1);}
+}
+
+.cake{
+    font-size:70px;
+    animation:bounce 2s infinite;
+    margin-bottom:15px;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+h1{
+    color:#ff69aa;
+    font-size:2.7rem;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+h1 span{
+    color:#7ccfff;
+}
+
+.message{
+    color:#555;
+    line-height:1.9;
+    font-size:1rem;
+    margin-bottom:30px;
+}
+
+/* love text animation */
+
+.love{
+    color:#ff6fae;
+    font-weight:700;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 5px #fff;
+    }
+    to{
+        text-shadow:0 0 18px #ff94c2;
+    }
+}
+
+/* button */
+
+button{
+    border:none;
+    padding:16px 30px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#8fdcff,#ffb7dc);
+    color:white;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 22px rgba(255,182,219,.4);
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* hidden wish */
+
+.hidden-message{
+    margin-top:25px;
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+.hidden-message h2{
+    color:#ff5ea8;
+    margin-bottom:10px;
+}
+
+.hidden-message p{
+    color:#555;
+    line-height:1.8;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* confetti */
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    top:-10px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* footer */
+
+.footer{
+    margin-top:25px;
+    color:#777;
+    font-size:.9rem;
+}
+
+/* mobile */
+
+@media(max-width:600px){
+
+    body{
+        overflow:auto;
+        padding:20px 0;
+    }
+
+    .card{
+        padding:30px 20px;
+    }
+
+    h1{
+        font-size:2.1rem;
+    }
+
+    .message{
+        font-size:.95rem;
+    }
+
+    .cake{
+        font-size:58px;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<div class="stars">
+    <span>✨</span>
+    <span>💖</span>
+    <span>🌸</span>
+    <span>✨</span>
+    <span>🩵</span>
+    <span>✨</span>
+</div>
+
+<div class="card">
+
+    <div class="badge">
+        🎀 Happy Birthday Hira 🎀
+    </div>
+
+    <div class="cake">🎂</div>
+
+    <h1>
+        Happy Birthday <br>
+        <span>Hira 💙</span>
+    </h1>
+
+    <p class="message">
+        To my sweetest little sister 🌸 <br><br>
+
+        You are the most caring, loving, kind-hearted,
+        and precious person in my life 💕 <br><br>
+
+        Thank you for always making my days brighter with
+        your smile, your cute talks, and your endless love ✨ <br><br>
+
+        You are not just my sister —
+        <span class="love">you are my favorite person in the whole world 💖</span>
+    </p>
+
+    <button onclick="celebrate()">
+        🎉 Click For Surprise
+    </button>
+
+    <div class="hidden-message" id="wish">
+        <h2>💌 A Special Wish For You</h2>
+
+        <p>
+            I love you more than words can ever explain 🩵 <br><br>
+
+            May your life always be filled with happiness,
+            soft moments, beautiful dreams, laughter,
+            success, and endless love 🌸✨ <br><br>
+
+            Stay the same sweet soul forever because
+            you truly make this world more beautiful 💕
+        </p>
+    </div>
+
+    <div class="footer">
+        Made with infinite love for Hira 💖
+    </div>
+
+</div>
+
+<script>
+
+function celebrate(){
+
+    document.getElementById("wish").style.display="block";
+
+    // confetti poppers
+
+    for(let i=0;i<180;i++){
+
+        let confetti=document.createElement("div");
+        confetti.classList.add("confetti");
+
+        document.body.appendChild(confetti);
+
+        let colors=[
+            "#ffb7dc",
+            "#8fdcff",
+            "#ffffff",
+            "#ffd166",
+            "#cdb4ff"
+        ];
+
+        confetti.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+        confetti.style.left=Math.random()*100+"vw";
+
+        confetti.style.width=
+        confetti.style.height=
+        Math.random()*10+6+"px";
+
+        confetti.style.animationDuration=
+        Math.random()*3+2+"s";
+
+        confetti.style.opacity=Math.random();
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+}
+
+</script>
+
+</body>
+</html>
